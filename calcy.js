@@ -112,7 +112,9 @@ const performCalculation = {
 
   '-': (firstNumber, secondNumber) => firstNumber - secondNumber,
 
-  '=': (firstNumber, secondNumber) => secondNumber
+  '=': (firstNumber, secondNumber) => secondNumber,
+
+  '%': (firstNumber, secondNumber) => firstNumber % secondNumber
 };
 
 //function to set the calculator screen to 0
