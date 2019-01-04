@@ -6,7 +6,9 @@ const calculator = {
 	flag:0,
 	expression:" ",
 };
+
 var array = new Array();
+
 
 function onClickNumber(number) {
   const { screenValue, waitingForNextOperand } = calculator;
@@ -70,7 +72,9 @@ function onClickOperator(nextOperator) {
   		array.push(calculation);
   		updateLog();
     	clearExpression();
-    	calculator.operand = null;
+    	calculator.operand = calculator.screenValue;
+      calculator.operator = null;
+      flag = 1;
     	console.log(calculator.expression);
   	}
 
@@ -103,6 +107,7 @@ function resetCalculator() {
   calculator.waitingForNextOperand = false;
   calculator.operator = null;
   calculator.expression = '0';
+  calculator.flag = 0;
 }
 
 function updateDisplay() {
@@ -162,8 +167,5 @@ keys.addEventListener('click', (event) => {
 });
 
 
-function onClickEqual() {
-	res = calculate(queue);
-}
 
 
