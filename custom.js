@@ -70,7 +70,9 @@ function onClickOperator(nextOperator) {
   		array.push(calculation);
   		updateLog();
     	clearExpression();
-    	calculator.operand = null;
+    	calculator.operand = calculator.screenValue;
+      calculator.operator = null;
+      flag = 1;
     	console.log(calculator.expression);
   	}
 
